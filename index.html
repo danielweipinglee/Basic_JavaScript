@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <center>
+<body style="background-color:powderblue;">
+<p>This is Wei-Ping Lee's Assignment 2 for CS3365</p><br>
+<marquee>JavaScript Assignment 2 Special Calculator</marquee><br>
+Input1: <input type="text" id="number1" value=""><br><br>
+Input2: <input type="text" id="number2" value=""><br><br>
+    <button onclick="myAdd()">A. +</button>
+    <button onclick="myMultiply()">B. x</button>
+    <button onclick="myMod()">C. % (largest to the smallest)</button>
+    <button onclick="myIncrement()">D. Increment both by 1 then perform the sum</button><br><br>
+
+Result: <input type="text" id="result" value"">
+
+<script>
+    
+    function myAdd() {
+    var x = document.getElementById("number1").value;
+    var y = document.getElementById("number2").value;
+    if (document.getElementById("number1").value ==''||document.getElementById("number2").value =='')
+        {
+            alert("Please enter your number!");
+        }
+    else if (isNaN(x)||isNaN(y))
+        {
+            alert("Please re-enter your number!");
+        }
+    
+    else
+        {
+            var r = parseFloat(x)+parseFloat(y);
+            document.getElementById("result").value = r;
+        }
+    }
+    
+    
+    
+    
+    
+    function myMultiply(){
+    var a = document.getElementById("number1").value;
+    var b = document.getElementById("number2").value;
+    if (document.getElementById("number1").value ==''||document.getElementById("number2").value =='')
+        {
+            alert("Please enter your number!");
+        }
+    else if (isNaN(a)||isNaN(b))
+        {
+            alert("Please re-enter your number!");
+        }
+    else
+        {
+            var c = parseFloat(a)*parseFloat(b);
+            document.getElementById("result").value = c;
+        }
+        
+    }
+    
+    
+    
+    
+    function myMod(){
+    var i = document.getElementById("number1").value;
+    var j = document.getElementById("number2").value;
+    if (document.getElementById("number1").value ==''||document.getElementById("number2").value =='')
+        {
+            alert("Please enter your number!");
+        }
+    else if (isNaN(i)||isNaN(j))
+        {
+            alert("Please re-enter your number!");
+        }
+    else if ((parseFloat(i)>parseFloat(j)) && j == '0')
+        {
+            alert("You can not mod 0!");
+            
+        }
+    else if (parseFloat(j)>parseFloat(i)&& i =='0')
+        {
+            alert("You can not mod 0!");
+        
+        }
+    else if (parseFloat(i)>parseFloat(j) && parseFloat(j)!=0)
+        {
+             var k = parseFloat(i)%parseFloat(j);
+            document.getElementById("result").value = k;
+        }
+    else if (parseFloat(j)>parseFloat(i)&&parseFloat(i)!=0)
+        {
+            var q = parseFloat(j)%parseFloat(i);
+            document.getElementById("result").value = q;
+        }
+      else if (parseFloat(j)==parseFloat(i)&&parseFloat(j)==0&&parseFloat(i)==0)
+        {
+            alert("You can not mod 0! please re-enter your number");
+        }
+    else if (parseFloat(j)==parseFloat(i)&& parseFloat(j)!=0 &&parseFloat(i)!=0)
+    {
+        document.getElementById("result").value = 0;
+    }
+    else 
+    {
+         document.getElementById("result").value = 0;
+    }
+        
+}
+    
+    function myIncrement(){
+         var c = document.getElementById("number1").value;
+         var d = document.getElementById("number2").value;
+        if (document.getElementById("number1").value ==''||document.getElementById("number2").value =='')
+        {
+            alert("Please enter your number!");
+        }
+    else if (isNaN(c)||isNaN(d))
+        {
+            alert("Please re-enter your number!");
+        }
+        else{
+         var f = parseFloat(c)+1;
+         var g = parseFloat(d)+1;
+        document.getElementById("result").value = f+g;
+        }
+        
+    }
+
+</script>
+
+</body>
+    </center>
+</html>
